@@ -42,8 +42,8 @@ int main()
     double a = getValue();
     cout<<"Enter second number ";
     double b = getValue();
-    bool F;
-    F=checkExist(a, b);
+    bool F=checkExist(a, b);
+   
     cout<<"Rm= "<<getRm(a,b)<<endl;
 
     if(F==true){
