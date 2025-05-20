@@ -46,7 +46,7 @@ int main()
    
     cout<<"Rm= "<<getRm(a,b)<<endl;
 
-    if(F==true){
+    if(checkExist(a,b)){
         cout<<"Rg= "<<getRg(a,b);
     }
     else{
