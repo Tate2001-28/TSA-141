@@ -1,5 +1,7 @@
 #include <iostream>
 #include<math.h>
+#include <limits>
+#define _USE_MATH_DEFINES
 
 double getValue();
 /**
@@ -13,35 +15,30 @@ double getY(const double x);
  * @return значение функции
 */
 
+void checkStep(const double step);
+
 using namespace std;
 int main()
 {
-	double Val[10];
-	double X[10];
-	float z=0.5;
-	  
-	do{
-		for(int i=1;i<=11;i++){
-		X[i]=z;
-		z=z+0.05;
-		}
-	}while(z<=1);
-
-	
-	 for(int i=1;i<=11;i++){
-	 	Val[i]=getY(X[i]);
-	 }
-	 for(int i=1;i<=10;i++){
-	 	cout<<"Y["<<i<<"]="<<Val[i]<<endl;
-	 	
-	 }
-	
+	 cout<<"Enter xn: ";
+    double xstart = getValue();
+    cout<<"Enter xk: ";
+    double xend = getValue();
+    cout<<"Enter step: ";
+    double step = getValue();
+    checkStep(step);
+    for (double x = xstart; x<xend+step; x+=step)
+    {
+        cout<< "x = "<<x;
+        cout<< " y = "<<getY(x)<<endl;
+    }
     return 0;
+	
 }
 
 double getValue()
 {
-    double value;
+    double value=0;
     cin>>value;
     if (cin.fail())
     {
@@ -51,9 +48,17 @@ double getValue()
     return value;
 }
 
+void checkStep(const double step)
+{
+    if(step <= 0 )
+    {
+        cout<<"Error value"<< endl;
+        abort();
+    }
+}
 
 double getY(const double x)
 {
-    return x + cos((pow(x,0.52) +2)*(180/3.14) );
+    return x + cos((pow(x,0.52) +2)*(180/M_PI) );
 }
 
