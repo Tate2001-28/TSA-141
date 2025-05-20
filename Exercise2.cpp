@@ -58,7 +58,7 @@ int main()
 }
 double getValue()
 {
-    double value;
+    double value=0;
     cin>>value;
     if (cin.fail())
     {
@@ -77,6 +77,7 @@ bool checkExist( double a,  double b)
     else{
         return true;
     }
+return (a*b>0);
 }
 
 double getRm( double a,  double b){
