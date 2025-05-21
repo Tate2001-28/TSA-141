@@ -75,9 +75,9 @@ bool checkExist( double a,  double b)
         return false;
     }
     else{
-        return true;
+        return (a*b>0);
     }
-return (a*b>0);
+
 }
 
 double getRm( double a,  double b){
