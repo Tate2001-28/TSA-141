@@ -70,12 +70,12 @@ double getValue()
 
 bool checkExist( double a,  double b)
 {
-    if (a*b<0)
+    if (a*b>0)
     {
         return false;
     }
     else{
-        return (a*b>0);
+        return (true);
     }
 
 }
