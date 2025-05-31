@@ -1,4 +1,3 @@
-
 #include <iostream>
 
 int getValue();
@@ -37,12 +36,13 @@ int main()
         }
     else
     {
-        cout<<"Index of first couple of neighbor elements with differents signs: "<< index<<endl;
-    }    
-    multOfElements(arr, n);
-    printArray(arr,n);
+        cout<<"Index of first couple of neighbor elements with differents signs: "<< index<<" and "<<index+1<<endl;
+    }  
+    int* freshArr = copyArray(arr,n);  
+    multOfElements(freshArr, n);
     delete [] arr;
-    return 0;
+    delete [] freshArr;
+	return 0;
 }
 
 int getValue()
@@ -59,7 +59,7 @@ int getValue()
 
 size_t getSize()
 {
-    std::cout<<"Enter n"<<endl;
+    std::cout<<"Enter n ";
     int n = getValue();
     checkN(n);
     return (size_t)n;
@@ -121,15 +121,25 @@ void multOfElements(int* arr, const int n)
 
 size_t getIndexOfFirstCoupleofNumberswithdifferentssigns(int* arr, const int n)
 {
-    for (size_t i = 0; i < n; i++)
+    for (size_t i = 1; i <= n; i++)
     {
-        if ((arr[i+1] < 0)&& (arr[i]>0))
+        if ((arr[i] < 0)&& (arr[i-1]>0))
         {
             return i;
         }
-        else if((arr[i+1] < 0)&& (arr[i]>0)){
+        else if((arr[i-1] < 0)&& (arr[i]>0)){
         	return i;
 		}
     }
     return n;
+}
+
+int* copyArray(int* arr, const int n)
+{
+    int* copyArr = new int [n];
+    for (size_t i = 0; i < n; i++)
+    {
+        copyArr[i] = arr[i];
+    }
+    return copyArr;
 }
