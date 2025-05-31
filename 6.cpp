@@ -1,25 +1,46 @@
 #include <iostream>
 
 int getValue();
-
+/**
+ * @brief считывает вещественное число с клавиатуры с проверкой ввода
+ * @return считанное значение
+*/
 size_t getSize();
-
+/**
+ * @brief считывает вещественное число с клавиатуры с проверкой ввода
+ * @return считанное значение
+*/
 void checkN(const int n);
-
+/**
+ * @brief проверяет если число введен верно
+*/
 void fillArray(int* arr, const int n);
-
+/**
+ * @brief Пополнение массива с клавиатурой
+*/
 void printArray(int* arr, const int n);
-
+/**
+ * @brief Печать массива
+*/
 int sumOfElements(int* arr, const int n);
-
-void sortArray(int* arr, const int n);
-
+/**
+ * @brief Вычисляет сумму четных чисел 
+ * @return считанное значение
+*/
 size_t getIndexOfFirstCoupleofNumberswithdifferentssigns(int* arr, const int n);
-
+/**
+ * @brief Находит индекс первой пары соседних элементов с разными знаками 
+ * @return считанное значение
+*/
 void multOfElements(int* arr, const int n);
-
+/**
+ * @brief Умножит все четные положительные элементы на последний элемент массива 
+*/
 int* copyArray(int* arr, const int n);
-
+/**
+ * @brief Делает копию исходного массива
+ * @return новый массив
+*/
 using namespace std;
 
 int main()
