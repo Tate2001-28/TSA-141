@@ -37,16 +37,11 @@ int main()
         }
     else
     {
-        cout<<"Index of first couple of neighbor elements with differents signs: "<< index+1<<endl;
+        cout<<"Index of first couple of neighbor elements with differents signs: "<< index<<endl;
     }    
     multOfElements(arr, n);
-    int* sortArr = copyArray(arr,n);
-    sortArray(sortArr,n);
-    printArray(sortArr,n);
     printArray(arr,n);
-    delete [] sortArr;
     delete [] arr;
-
     return 0;
 }
 
@@ -137,30 +132,4 @@ size_t getIndexOfFirstCoupleofNumberswithdifferentssigns(int* arr, const int n)
 		}
     }
     return n;
-}
-
-void sortArray(int* arr, const int n)
-{
-    for (size_t i = 0; i < n; i++)
-    {
-        for (size_t j = i; j < n; j++)
-        {
-            if (arr[i]>arr[j])
-            {
-                int temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
-            }
-        }
-    }
-}
-
-int* copyArray(int* arr, const int n)
-{
-    int* copyArr = new int [n];
-    for (size_t i = 0; i < n; i++)
-    {
-        copyArr[i] = arr[i];
-    }
-    return copyArr;
 }
