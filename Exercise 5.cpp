@@ -57,14 +57,14 @@ double sumE(const double e);
 int main()
 {
 	setlocale(LC_ALL, "Russian");
-    cout<<"Введите число членов ряда для рассчета последовательности: ";
+    cout<<"Enter the number of terms of the series to calculate the sequence: ";
     int n = getValue();
     checkN(n);
-    cout<<"Сумма "<<n<<" членов ряда равна "<<sumN(n)<<endl;
-    cout<<"Введите погрешность для рассчета последовательности: ";
+    cout<<"Sum "<<n<<" terms of the series= "<<sumN(n)<<endl;
+    cout<<"Enter error to calculate the series: ";
     double e = getDouble();
     checkE(e);
-    cout<<"Сумма членов ряда с точностью е равна "<<sumE(e)<<endl;;
+    cout<<"Sum of the terms with error e =  "<<sumE(e)<<endl;;
     return 0;
 }
 
@@ -104,20 +104,20 @@ void checkN(const int n)
 double sumN(const int n)
 {
     
-    const double first = (-1.0)/2;
-    double curent = first;
-    double result = first;
+    double current = (-8.0)/1.0;
+    double result = current;
     for (int i = 1; i < n ; i++)
     {
-        curent = getNext(curent, i);
-        result += curent;
+        current = getNext(current, i);
+        result += current;
     }
     return result;
 }
 
-double getNext(const double curent, const int i)
+
+double getNext(const double current, const int i)
 {
-    return curent * (-1.0)*pow(i+1,3)/pow(i,3);
+    return current * (-1.0)*pow(i+2,3)/pow(i+1,4);
 }
 
 void checkE(const double e)
@@ -131,13 +131,12 @@ void checkE(const double e)
 
 double sumE(const double e)
 {
-    const double first = (-1.0)/2;
-    double curent = first;
+    double current = (-8.0)/1.0;
     double result = 0;
-    for (int i = 1; abs(curent) > e ; i++)
+    for (int i = 1; abs(current) > e ; i++)
     {
-        result += curent;
-        curent = getNext(curent, i);
+        result += current;
+        current = getNext(current, i);
         
     }
     return result;
