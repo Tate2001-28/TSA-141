@@ -123,11 +123,11 @@ size_t getIndexOfFirstCoupleofNumberswithdifferentssigns(int* arr, const int n)
 {
     for (size_t i = 0; i < n; i++)
     {
-        if ((arr[i] < 0)&& (arr[i+1]>0))
+        if ((arr[i+1] < 0)&& (arr[i]>0))
         {
             return i;
         }
-        else if((arr[i] < 0)&& (arr[i+1]>0)){
+        else if((arr[i+1] < 0)&& (arr[i]>0)){
         	return i;
 		}
     }
