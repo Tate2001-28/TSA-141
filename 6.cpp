@@ -142,7 +142,7 @@ void multOfElements(int* arr, const int n)
 
 size_t getIndexOfFirstCoupleofNumberswithdifferentssigns(int* arr, const int n)
 {
-    for (size_t i = 1; i <= n; i++)
+    for (size_t i = 1; i < n; i++)
     {
         if ((arr[i] < 0)&& (arr[i-1]>0))
         {
